@@ -29,7 +29,8 @@ module Harvest
       end
       
       def toggle(entry)
-        request(:get, credentials, "/daily/timer/#{entry.to_i}")        
+        request(:get, credentials, "/daily/timer/#{entry.to_i}")
+        Harvest::TimeEntry.parse(response.parsed_response).first
       end
     end
   end
