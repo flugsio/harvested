@@ -20,6 +20,9 @@ module Harvest
     property :is_billed
     property :timer_started_at
     property :adjustment_record
+    property :started_at
+    property :ended_at
+    property :hours_for_previously_running_timer
     
     skip_json_root true
     
