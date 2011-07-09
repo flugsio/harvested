@@ -27,6 +27,10 @@ module Harvest
         request(:delete, credentials, "/daily/delete/#{entry.to_i}", :query => of_user_query(user))
         entry.id
       end
+      
+      def toggle(entry)
+        request(:get, credentials, "/daily/timer/#{entry.to_i}")        
+      end
     end
   end
 end
